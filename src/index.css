@@ -113,3 +113,24 @@ ul > li.minus:hover button {
   width: 25px;
   cursor: pointer;
 }
+
+
+.form::before{
+  content: "";
+  border-bottom: 2px solid rgb(172, 171, 171);
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  bottom: 27%;
+  left: 0%;
+}
+
+.form-control{
+  display:flex;
+  flex-direction:column;
+}
+
+.label1{
+  font-weight:600;
+  color:#798086;
+}

@@ -7,9 +7,9 @@ const AddTransaction = () => {
   return (
     <Fragment>
       <h3>Add New AddTransaction</h3>
-      <form id="form">
+      <form className="form">
         <div className="form-control">
-          <label htmlFor="text">Text</label>
+          <label htmlFor="text" className="label1">Text</label>
           <input
             type="text"
             value={text}
