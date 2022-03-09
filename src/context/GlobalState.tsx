@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from "react";
+import AppReducer from "./AppReducer";
 type objectIs = {
   id: number;
   text: string;
@@ -8,7 +9,11 @@ type Transactions = {
   transactions: Array<objectIs>;
 };
 
-const initialState: Transactions = {
+type childProps = {
+  children: React.ReactNode;
+};
+
+const initialState = {
   transactions: [
     { id: 1, text: "Flower", amount: -20 },
     { id: 1, text: "Salary", amount: 300 },
@@ -17,4 +22,21 @@ const initialState: Transactions = {
   ]
 };
 
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext<Transactions>(initialState);
+
+// provider Component
+export const GlobalProvider = ({ children }: childProps) => {
+  function AppReducer(state: Transactions, action: any) {
+    switch (action.type) {
+      default:
+        return state;
+    }
+  }
+  const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  return (
+    <GlobalContext.Provider value={{ transactions: state.transactions }}>
+      {children}
+    </GlobalContext.Provider>
+  );
+};
