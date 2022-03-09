@@ -1,6 +1,14 @@
 import React, { createContext, useReducer } from "react";
+type objectIs = {
+  id: number;
+  text: string;
+  amount: number;
+};
+type Transactions = {
+  transactions: Array<objectIs>;
+};
 
-const initialState = {
+const initialState: Transactions = {
   transactions: [
     { id: 1, text: "Flower", amount: -20 },
     { id: 1, text: "Salary", amount: 300 },
@@ -8,3 +16,5 @@ const initialState = {
     { id: 1, text: "Camera", amount: 150 }
   ]
 };
+
+export const GlobalContext = createContext(initialState);
