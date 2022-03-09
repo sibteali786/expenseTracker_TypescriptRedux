@@ -35,6 +35,11 @@ h2,
 h3 {
   font-weight: 600;
 }
+
+h3{
+  border-bottom:1px solid #798086;
+  padding-bottom: 10px;
+}
 #balance {
   margin: auto 0.2px;
 }
@@ -70,15 +75,7 @@ h3 {
   font-weight: 700;
 }
 
-.list::before {
-  content: "";
-  border-bottom: 2px solid rgb(172, 171, 171);
-  position: absolute;
-  height: 10px;
-  width: 100%;
-  top: 39%;
-  left: 0%;
-}
+
 
 li.minus {
   display: flex;
@@ -88,7 +85,7 @@ li.minus {
   -webkit-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.75);
   list-style-type: none;
-  margin: 0 auto;
+  margin: 0.5rem auto;
   border-right: 4px solid rgb(146, 27, 27);
   height: 33px;
   align-items: center;
@@ -105,7 +102,7 @@ li.minus > button {
 ul > li.minus:hover button {
   display: block;
   position: absolute;
-  right: -14%;
+  right: -8%;
   background-color: rgb(146, 27, 27);
   color: #ffffff;
   border: none;
@@ -114,15 +111,7 @@ ul > li.minus:hover button {
   cursor: pointer;
 }
 
-.form::before {
-  content: "";
-  border-bottom: 2px solid rgb(172, 171, 171);
-  position: absolute;
-  height: 10px;
-  width: 100%;
-  bottom: 36%;
-  left: 0%;
-}
+
 
 .form-control {
   display: flex;
