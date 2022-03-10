@@ -64,7 +64,7 @@ h3{
   top: 20%;
 }
 #money-plus {
-  color: rgb(107, 197, 17);
+  color: rgb(57, 85, 29);
   margin: 0 auto;
   font-weight: 700;
 }
@@ -91,11 +91,30 @@ li.minus {
   align-items: center;
   padding: 0 0.4rem;
 }
+
+li.plus{
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.75);
+  list-style-type: none;
+  margin: 0.5rem auto;
+  border-right: 4px solid rgb(57, 85, 29);
+  height: 33px;
+  align-items: center;
+  padding: 0 0.4rem;
+}
 ul {
   padding-inline-start: 0;
 }
 
 li.minus > button {
+  display: none;
+}
+
+li.plus > button {
   display: none;
 }
 
@@ -110,7 +129,17 @@ ul > li.minus:hover button {
   width: 25px;
   cursor: pointer;
 }
-
+ul > li.plus:hover button {
+  display: block;
+  position: absolute;
+  right: -8%;
+  background-color: rgb(57, 85, 29);
+  color: #ffffff;
+  border: none;
+  height: 33px;
+  width: 25px;
+  cursor: pointer;
+}
 
 
 .form-control {
