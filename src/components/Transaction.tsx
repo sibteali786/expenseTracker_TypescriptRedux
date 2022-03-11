@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, {useContext} from "react";
+import { GlobalContext } from "../context/GlobalState";
 type objectIs = {
   id: number;
   text: string;
@@ -11,6 +11,7 @@ type props = {
 };
 
 export const Transaction = (props: props) => {
+  const {deleteTransaction} = useContext(GlobalContext);
   const transaction = props.transaction;
   const sign = transaction.amount < 0 ? "-" : "+";
   return (
@@ -19,7 +20,7 @@ export const Transaction = (props: props) => {
       <span>
         {sign}${Math.abs(transaction.amount)}
       </span>
-      <button className="delete-btn">x</button>
+      <button className="delete-btn" onClick={()=>deleteTransaction(transaction.id)}>x</button>
     </li>
   );
 };
