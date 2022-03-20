@@ -1,5 +1,7 @@
-import React, {useContext} from "react";
-import { GlobalContext } from "../context/GlobalState";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteTransaction } from "../store/Actions";
+
 type objectIs = {
   id: number;
   text: string;
@@ -11,7 +13,7 @@ type props = {
 };
 
 export const Transaction = (props: props) => {
-  const {deleteTransaction} = useContext(GlobalContext);
+  const dispatch = useDispatch();
   const transaction = props.transaction;
   const sign = transaction.amount < 0 ? "-" : "+";
   return (
@@ -20,7 +22,12 @@ export const Transaction = (props: props) => {
       <span>
         {sign}${Math.abs(transaction.amount)}
       </span>
-      <button className="delete-btn" onClick={()=>deleteTransaction(transaction.id)}>x</button>
+      <button
+        className="delete-btn"
+        onClick={() => dispatch(deleteTransaction(transaction.id))}
+      >
+        x
+      </button>
     </li>
   );
 };

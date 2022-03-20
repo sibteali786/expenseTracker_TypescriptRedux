@@ -1,11 +1,11 @@
 import { ADD_TRANSACTION, DELETE_TRANSACTION } from "./actiontype";
 
-type objectIs = {
+export type objectIs = {
   id: number;
   text: string;
   amount: number;
 };
-type Transactions = {
+export type Transactions = {
   transactions: Array<objectIs>;
 };
 

@@ -1,12 +1,11 @@
 import React, { Fragment, useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import { useSelector } from "react-redux";
 const Balance = () => {
-  const {transactions} = useContext(GlobalContext);
-  const amounts = transactions.map(transaction=>transaction.amount);
-  const total = amounts.reduce((acc,item)=>(acc+=item),0).toFixed(2);
+  const transactions = useSelector((state) => state.transactions);
+  const amounts = transactions.map((transaction) => transaction.amount);
+  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
-  
-  return ( 
+  return (
     <Fragment>
       <h4>Your Balance</h4>
       <h1 id="balance"> ${total}</h1>

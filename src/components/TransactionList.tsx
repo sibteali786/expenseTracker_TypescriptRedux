@@ -1,8 +1,8 @@
 import React, { Fragment, useContext } from "react";
-import { GlobalContext } from "../context/GlobalState";
+import { useSelector } from "react-redux";
 import { Transaction } from "./Transaction";
 const TransactionList = () => {
-  const { transactions } = useContext(GlobalContext);
+  const transactions = useSelector((state) => state.transactions);
 
   return (
     <Fragment>
