@@ -2,13 +2,13 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteTransaction } from "../store/Actions";
 
-type objectIs = {
+export type objectIs = {
   id: number;
   text: string;
   amount: number;
 };
 
-type props = {
+export type props = {
   transaction: objectIs;
 };
 

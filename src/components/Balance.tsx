@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment} from "react";
 import { useSelector } from "react-redux";
 const Balance = () => {
   const transactions = useSelector((state) => state.transactions);
