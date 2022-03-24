@@ -1,7 +1,11 @@
-import React, { Fragment} from "react";
+import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { objectIs } from "../store/reducer";
 const Balance = () => {
-  const transactions = useSelector((state) => state.transactions);
+  const transactions = useSelector<RootState, Array<objectIs>>(
+    (state) => state.transactions
+  );
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 

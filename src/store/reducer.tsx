@@ -1,23 +1,28 @@
 import { ADD_TRANSACTION, DELETE_TRANSACTION } from "./actiontype";
 
-export type objectIs = {
+export interface objectIs {
   id: number;
   text: string;
   amount: number;
-};
+}
 export type Transactions = {
-  transactions: Array<objectIs>;
+  transactions: objectIs[];
 };
 
 const initialState = {
   transactions: []
 };
 
-type Action = {
+export type Action = {
   type: string;
-  payload: number | string;
+  payload: objectIs;
 };
-export const reducer = (state: Transactions = initialState, action: Action) => {
+
+export type DispatchType = (args: Action) => Action;
+export const reducer = (
+  state: Transactions = initialState,
+  action: Action
+): Transactions => {
   switch (action.type) {
     case ADD_TRANSACTION:
       return {
@@ -29,7 +34,7 @@ export const reducer = (state: Transactions = initialState, action: Action) => {
       return {
         ...state,
         transactions: state.transactions.filter(
-          (transaction) => transaction.id !== action.payload
+          (transaction) => transaction.id !== action.payload.id
         )
       };
     default:
