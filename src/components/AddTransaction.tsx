@@ -10,7 +10,7 @@ const AddTransaction = () => {
     { addTransaction, deleteTransaction },
     dispatch
   );
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const newTransaction = {
       id: Math.floor(Math.random() * 1000000),
